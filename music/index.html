@@ -1,13 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#17130f">
     <title>Music | Gerian Soirée</title>
     <link rel="stylesheet" href="../css/music.css">
 </head>
 <body class="music-page">
+    <main class="music-shell">
+        <!-- Image slot 1: wide album hero. Artwork will be added after selection. -->
+        <header class="music-hero" aria-label="Album hero artwork"></header>
 
+        <section class="music-workspace" aria-label="Album player and story layout">
+            <aside class="music-library" aria-label="Album artwork, player and track list">
+                <!-- Image slot 2: square album artwork. -->
+                <div class="album-art-slot" role="img" aria-label="Album artwork placeholder"></div>
+
+                <!-- Persistent player layout foundation. Audio behaviour will be added separately. -->
+                <section class="player-panel" aria-label="Music player">
+                    <div class="player-controls" aria-hidden="true">
+                        <span class="player-button player-button--previous"></span>
+                        <span class="player-button player-button--primary"></span>
+                        <span class="player-button player-button--next"></span>
+                        <span class="waveform-slot"></span>
+                    </div>
+                    <div class="player-timeline" aria-hidden="true">
+                        <div class="player-timeline-fill"></div>
+                    </div>
+                </section>
+
+                <!-- Track-list visual foundation. Real track data and controls will be added later. -->
+                <div class="track-list" aria-label="Album track list">
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                    <div class="track-row"><span class="track-row-line"></span></div>
+                </div>
+            </aside>
+
+            <article class="music-story" aria-label="Selected composition story">
+                <!-- Image slot 3: supporting story image, blended behind future text. -->
+                <div class="story-image-layer" aria-hidden="true"></div>
+                <div class="story-content-slot" aria-hidden="true">
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                    <div class="story-line"></div>
+                </div>
+                <div class="story-quote-slot" aria-hidden="true"></div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
