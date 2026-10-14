@@ -1,66 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#17130f">
-    <title>Music | Gerian Soirée</title>
-    <link rel="stylesheet" href="../css/music.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17130f">
+  <meta name="description" content="Listen to Reflections, the debut album by Gerian Soirée, and read the stories behind the music.">
+  <title>Reflections | Music | Gerian Soirée</title>
+  <link rel="stylesheet" href="../css/music.css">
 </head>
 <body class="music-page">
-    <main class="music-shell">
-        <!-- Image slot 1: wide album hero. Artwork will be added after selection. -->
-        <header class="music-hero" aria-label="Album hero artwork"></header>
+  <main class="music-shell">
+    <header class="music-hero">
+      <div class="hero-shade"></div>
+      <div class="hero-top">
+        <a class="brand-lockup" href="../index.html" aria-label="Gerian Soirée home">
+          <span class="brand-monogram">GS</span>
+          <span class="brand-wordmark">
+            <span class="brand-script">Gerian Soirée</span>
+            <span class="brand-subtitle">MUSIC · REFLECTIONS</span>
+            <span class="brand-tagline">A MORE THOUGHTFUL WAY OF BEING</span>
+          </span>
+        </a>
+        <nav class="music-nav" aria-label="Music navigation">
+          <a class="nav-link nav-link-current" href="./index.html">Album Landing</a>
+          <a class="nav-link nav-link-home" href="../index.html">Home</a>
+        </nav>
+      </div>
+      <div class="hero-title">
+        <p class="eyebrow">GERIAN SOIRÉE · DEBUT ALBUM</p>
+        <h1>Reflections</h1>
+        <span class="ornament" aria-hidden="true">✦</span>
+        <p class="hero-subtitle">TEN ORIGINAL COMPOSITIONS</p>
+      </div>
+    </header>
 
-        <section class="music-workspace" aria-label="Album player and story layout">
-            <aside class="music-library" aria-label="Album artwork, player and track list">
-                <!-- Image slot 2: square album artwork. -->
-                <div class="album-art-slot" role="img" aria-label="Album artwork placeholder"></div>
+    <section class="persistent-player" aria-label="Album audio player">
+      <img class="player-cover" src="../images/reflections-album-art.jpg" alt="Reflections album artwork"
+           onerror="this.style.visibility='hidden'">
+      <div class="player-track-meta">
+        <span class="now-playing-label">NOW SELECTED</span>
+        <strong id="player-track-title">01 · Reflections</strong>
+        <span>Gerian Soirée</span>
+      </div>
+      <div class="player-transport">
+        <button class="transport-button" id="previous-track" type="button" aria-label="Previous track">|◀</button>
+        <button class="play-button" id="play-toggle" type="button" aria-label="Play selected composition"><span id="play-symbol">▶</span></button>
+        <button class="transport-button" id="next-track" type="button" aria-label="Next track">▶|</button>
+      </div>
+      <div class="timeline-area">
+        <div class="waveform" aria-hidden="true"></div>
+        <div class="time-row"><span id="current-time">0:00</span><span id="track-duration">8:19</span></div>
+        <input id="seek-bar" class="seek-bar" type="range" min="0" max="100" value="0" aria-label="Seek within track">
+      </div>
+      <label class="volume-control" aria-label="Volume">
+        <span aria-hidden="true">◖))</span>
+        <input id="volume-bar" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume">
+      </label>
+      <a id="soundcloud-link" class="soundcloud-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+        <span aria-hidden="true">☁</span> LISTEN ON SOUNDCLOUD
+      </a>
+      <p id="player-status" class="player-status" role="status" aria-live="polite">Choose a composition to read its story. Audio links will be connected after the MP3 filenames are confirmed.</p>
+      <audio id="album-audio" preload="metadata"></audio>
+    </section>
 
-                <!-- Persistent player layout foundation. Audio behaviour will be added separately. -->
-                <section class="player-panel" aria-label="Music player">
-                    <div class="player-controls" aria-hidden="true">
-                        <span class="player-button player-button--previous"></span>
-                        <span class="player-button player-button--primary"></span>
-                        <span class="player-button player-button--next"></span>
-                        <span class="waveform-slot"></span>
-                    </div>
-                    <div class="player-timeline" aria-hidden="true">
-                        <div class="player-timeline-fill"></div>
-                    </div>
-                </section>
+    <section class="music-workspace" aria-label="Album tracks and composition story">
+      <aside class="music-library">
+        <div class="panel-heading">
+          <h2>The Album</h2>
+          <p>Ten original compositions</p>
+          <span class="gold-rule" aria-hidden="true"></span>
+        </div>
+        <div id="track-list" class="track-list" aria-label="Select a track to read its story"></div>
+        <div class="list-instruction">
+          <span class="instruction-icon" aria-hidden="true">i</span>
+          <p><strong>Select a title to read its story.</strong><br>Use the play button beside a track to listen to that composition.</p>
+        </div>
+      </aside>
 
-                <!-- Track-list visual foundation. Real track data and controls will be added later. -->
-                <div class="track-list" aria-label="Album track list">
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                    <div class="track-row"><span class="track-row-line"></span></div>
-                </div>
-            </aside>
+      <article class="music-story" aria-live="polite">
+        <div class="story-image-layer" role="img" aria-label="Warmly lit upright piano"></div>
+        <div class="story-content">
+          <header class="story-header">
+            <p class="section-kicker">THE STORY BEHIND THE MUSIC</p>
+            <span class="gold-rule" aria-hidden="true"></span>
+            <p id="story-number" class="story-number">01</p>
+            <h2 id="story-title">Reflections</h2>
+            <p class="story-byline">Gerian Soirée</p>
+          </header>
+          <div id="story-copy" class="story-copy"></div>
+          <blockquote id="story-quote" class="story-quote">
+            “Perhaps the question is not where music comes from. Perhaps the real question is whether we are quiet enough to notice it when it arrives.”
+            <cite>GS</cite>
+          </blockquote>
+          <a id="story-soundcloud" class="story-soundcloud" href="#" target="_blank" rel="noopener noreferrer" hidden>Listen to this composition on SoundCloud ↗</a>
+        </div>
+      </article>
+    </section>
+    <footer class="music-footer">GERIAN SOIRÉE <span>·</span> MUSIC THAT BEGINS WITH A MOMENT OF REFLECTION</footer>
+  </main>
 
-            <article class="music-story" aria-label="Selected composition story">
-                <!-- Image slot 3: supporting story image, blended behind future text. -->
-                <div class="story-image-layer" aria-hidden="true"></div>
-                <div class="story-content-slot" aria-hidden="true">
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                    <div class="story-line"></div>
-                </div>
-                <div class="story-quote-slot" aria-hidden="true"></div>
-            </article>
-        </section>
-    </main>
+  <script>
+    /*
+      Bunny.net audio URLs are intentionally left blank until the exact uploaded
+      MP3 filenames are confirmed. SoundCloud URLs are also left blank rather
+      than guessed. Add the real URLs in this track list when available.
+    */
+    const tracks = [
+      {
+        title: "Reflections", duration: "8:19", audio: "", soundcloud: "",
+        story: [
+          "During the past ten years of writing and composing music, I have often wondered where the music I hear internally, before I create it, actually comes from.",
+          "Reflections did not arrive all at once. It developed gradually, growing from familiar musical ideas into something with its own identity. Along the way, it evolved into different interpretations and sounds, including classical vocal and guitar versions. The cinematic version of the composition is also available on my YouTube page under the same title.",
+          "I composed this piece early in 2026. The feeling that came to me was simply having a still moment to think by myself, to reflect.",
+          "For me, the music represents those moments when we find ourselves sitting alone in thought, or when something we see, hear or feel suddenly inspires us. It also connects with the questions we ask ourselves during those quiet moments.",
+          "Perhaps that is what Reflections became for me: a musical expression of those moments when we pause long enough to experience our own life's reflections."
+        ],
+        quote: "Perhaps the question is not where music comes from. Perhaps the real question is whether we are quiet enough to notice it when it arrives."
+      },
+      {
+        title: "Blomme", duration: "6:24", audio: "", soundcloud: "",
+        story: [
+          "After a long separation from music, returning to creativity later in life became an important part of my journey.",
+          "I composed Blomme around the time we celebrated the 100th anniversary of Afrikaans becoming an official language. Blomme, which translates to “flowers” in Afrikaans, carries a deeply personal connection to my late mother. She also liked to write poems, and she once wrote a beautiful poem about flowers. Her message was simple: we should not place flowers on her grave, because we gave her all the most beautiful flowers throughout her entire lifetime.",
+          "For me, the piece became more than music. It connected memory, love, language and heritage, while also reflecting something about my own journey of rediscovering creativity later in life.",
+          "Perhaps that is what Blomme means to me now: a reminder that some things are meant to be appreciated while we still have the opportunity to experience them."
+        ],
+        quote: ""
+      },
+      {
+        title: "Blue", duration: "5:56", audio: "", soundcloud: "",
+        story: [
+          "I remember sitting at the piano, as I often do, simply putting my hands on the keys and playing a few notes. Sometimes I play things randomly, just to see what happens. On this occasion, I heard something in the way one particular note seemed to linger before moving into the next.",
+          "That small moment became the beginning of Blue.",
+          "I didn't sit down with a particular plan for the composition. I instinctively knew that I wanted it to remain a short piece, allowing the music to say what it needed to say without becoming unnecessarily long.",
+          "The composition evolved very quickly. From the first notes to the finished piece took less than a day.",
+          "As it developed, I introduced a leading guitar, which added another dimension to the music. I experimented with different interpretations of the piece, and it eventually found its place in a more neoclassical, cinematic sound with the electronic guitar carrying the melody.",
+          "What I enjoy about Blue is that I never really knew where it was going when I started. It simply evolved on its own."
+        ],
+        quote: ""
+      },
+      {
+        title: "Younger Today", duration: "6:08", audio: "", soundcloud: "",
+        story: [
+          "Younger Today was written for my son when he left home to work abroad.",
+          "There is something about watching your children leave home that makes you reflect on how quickly life moves. You are happy for them, proud of them, but at the same time, you realise that another chapter of their life, and your own, has begun.",
+          "I remember creating this piece during that time. The music became my way of expressing some of those feelings without having to put them into words.",
+          "At the time, I was also beginning to understand something about myself that I had struggled to accept: perhaps I really was a composer. Every time I sat down and another piece of music emerged, it became a little harder to dismiss it as simply something I enjoyed doing.",
+          "Younger Today therefore became part of two journeys happening at the same time. My son was beginning his own journey into the world, while I was slowly beginning to recognise and accept my own creative journey."
+        ],
+        quote: ""
+      },
+      {
+        title: "Seeds", duration: "5:41", audio: "", soundcloud: "",
+        story: [
+          "Seeds began with a simple thought about what we leave behind.",
+          "When we create something, we are planting something that may continue to exist long after we have moved on. It might be music, a piece of writing, an idea, or simply something we have given to another person. We don't always know where those things will eventually lead.",
+          "That idea became the foundation of Seeds.",
+          "As I worked on the composition, I found myself thinking about creativity itself. The tools we use to create may change over time, but the thought, emotion and intention behind what we create still come from somewhere within us. A carpenter uses tools to shape wood. I use different tools to shape ideas, sounds and music.",
+          "At the time, I was also thinking more deeply about the role of technology in my own creative process, and whether using a tool somehow changes the person behind the creation. For me, it doesn't. The tool can help bring an idea to life, but it doesn't decide what that idea should be.",
+          "Perhaps that is what Seeds represents to me now. We may never know how far something we create will travel, or what it might become in someone else's hands. We simply plant the seed and let it grow."
+        ],
+        quote: ""
+      },
+      {
+        title: "The Naked Soul", duration: "6:17", audio: "", soundcloud: "",
+        story: [
+          "The Naked Soul comes from a more vulnerable part of my creative journey.",
+          "Imposter syndrome is something I still experience. When you create music in a way that you cannot always fully explain, questions can creep in. Where does this come from? Am I really good enough? What will people think?",
+          "I think those questions are part of what shaped The Naked Soul. It became an expression of that more exposed side of creativity, where inspiration and self-doubt can exist at the same time.",
+          "At the time, I was also learning that accepting myself as a composer didn't mean that the doubts had to disappear. Perhaps I simply had to stop allowing them to decide whether I should continue.",
+          "The Naked Soul is about that space between confidence and uncertainty, and learning that the quiet voice questioning you doesn't always deserve to be believed."
+        ],
+        quote: ""
+      },
+      {
+        title: "Emma's Garden", duration: "7:03", audio: "", soundcloud: "",
+        story: [
+          "Emma's Garden carries a very personal story for me.",
+          "My late mother-in-law had a profound influence on the way I came to understand the emotional power of music. As Alzheimer's gradually changed her world, there was one particular piece of music I would often play for her.",
+          "She could hear the same piece several times in the same week, and each time it was as though she were hearing it for the first time. She didn't remember having heard it before, yet her reaction to the music could be exactly the same. Sometimes it moved her deeply, even to tears.",
+          "That experience made me think differently about what music actually reaches within us. Perhaps music doesn't always need memory to have meaning. Perhaps there is something much deeper that responds to it, something that remains even when memories begin to disappear.",
+          "Emma's Garden became part of that reflection for me. At the time, I was also beginning to understand that some of the most meaningful music we create can come from experiences of love, loss and the people who have touched our lives.",
+          "I don't think Emma's Garden is simply about Alzheimer's. For me, it is about connection, memory and the strange and beautiful ability of music to reach someone, even when words and memories can no longer do the same."
+        ],
+        quote: ""
+      },
+      {
+        title: "Questions", duration: "6:36", audio: "", soundcloud: "",
+        story: [
+          "Questions began in much the same way as some of my other compositions. I often record long sessions at the piano without knowing whether anything will come from them. Later, I listen back to those recordings and sometimes discover a small section that makes me want to explore it further.",
+          "Questions grew from one of those moments.",
+          "As I developed the piece, I became increasingly curious about how far I could take the original idea. It was also the first composition where I experimented extensively with completely different musical directions. I explored EDM, classical theatrical sounds and desert ambient textures, including the distinctive sounds of the Oud and Duduk.",
+          "That experimentation became part of the character of the piece. Rather than deciding from the beginning what Questions should become, I allowed myself to explore the possibilities and see where the music would take me.",
+          "At the time, I was also thinking about something that has become increasingly important in my own life: the willingness to remain curious. Finding purpose doesn't always mean knowing exactly where you are going. Sometimes it begins with being willing to ask questions and allowing yourself to explore the answers.",
+          "Perhaps that is why I called it Questions. Not because the music provides an answer, but because sometimes the journey begins simply by being curious enough to ask."
+        ],
+        quote: ""
+      },
+      {
+        title: "Mothers", duration: "7:12", audio: "", soundcloud: "",
+        story: [
+          "Some compositions take weeks or even months to develop. Others seem to arrive almost fully formed.",
+          "Mothers was one of the fastest pieces I have ever created. From the moment I sat down at the piano to exporting the completed composition took only around two and a half hours. The music seemed to know exactly where it wanted to go, and my role was simply to follow it.",
+          "Created around Mother's Day, the piece was warmly received and connected with many listeners. Perhaps that is because the theme is something we all understand in our own way. Mothers shape our lives long before we realise it, and their influence often remains with us long after childhood has passed.",
+          "What stayed with me most, however, was not how quickly the piece was created, but what the experience taught me about creativity itself.",
+          "Some compositions feel as though they are searching for their identity. Others arrive with remarkable clarity. Mothers reminded me that the creative process is not always about effort or complexity. Sometimes it is about trusting what arrives and allowing it to unfold naturally.",
+          "At the time, I was also beginning to understand something that would later inspire the Reflection Every Composition Changes Me. Every piece of music leaves something behind. Not only in the listener, but also in the person creating it.",
+          "Perhaps that is what Mothers means to me now. The music may one day be forgotten, but the person it helped me become will remain long after the final note has faded."
+        ],
+        quote: ""
+      },
+      {
+        title: "Tomorrow", duration: "6:48", audio: "", soundcloud: "",
+        story: [
+          "Tomorrow holds a special place in my journey because it was one of the first pieces I composed after returning to music.",
+          "I had recently started exploring the piano again on my Roland FP-10 digital piano. At first, I wasn't really trying to compose anything. I would sit down, play a few things almost randomly, and simply explore what came naturally.",
+          "Somewhere in that process, the beginnings of Tomorrow appeared.",
+          "What started as a simple idea gradually developed into something much bigger. I began experimenting with different sounds and arrangements, and the piece eventually found its way into a cinematic world that I hadn't originally imagined.",
+          "Looking back, Tomorrow represents much of what my creative journey has become. I explore. I experiment. I follow ideas. I don't always know where a piece is going when I begin it.",
+          "At the time, I was also rediscovering a part of myself that had been quiet for many years. Perhaps that is why Tomorrow feels appropriate as a title. It reminds me that returning to something you once thought was behind you can sometimes open the door to something completely unexpected.",
+          "Sometimes we don't learn by knowing where we are going. Sometimes we learn by reflecting on where we have been."
+        ],
+        quote: ""
+      }
+    ];
+
+    const trackList = document.getElementById("track-list");
+    const audio = document.getElementById("album-audio");
+    const status = document.getElementById("player-status");
+    const playToggle = document.getElementById("play-toggle");
+    const playSymbol = document.getElementById("play-symbol");
+    const seekBar = document.getElementById("seek-bar");
+    const volumeBar = document.getElementById("volume-bar");
+    let selectedIndex = 0;
+
+    function formatTime(seconds) {
+      if (!Number.isFinite(seconds)) return "0:00";
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
+      return mins + ":" + secs;
+    }
+
+    function renderTrackList() {
+      trackList.innerHTML = "";
+      tracks.forEach((track, index) => {
+        const row = document.createElement("div");
+        row.className = "track-row" + (index === selectedIndex ? " is-selected" : "");
+        row.dataset.index = index;
+
+        const thumb = document.createElement("img");
+        thumb.className = "track-thumb";
+        thumb.src = "../images/reflections-album-art.jpg";
+        thumb.alt = "";
+        thumb.onerror = () => { thumb.style.visibility = "hidden"; };
+
+        const play = document.createElement("button");
+        play.className = "track-play";
+        play.type = "button";
+        play.setAttribute("aria-label", "Play " + track.title);
+        play.textContent = "▶";
+        play.addEventListener("click", () => {
+          selectTrack(index, true);
+        });
+
+        const storyButton = document.createElement("button");
+        storyButton.className = "track-story-select";
+        storyButton.type = "button";
+        storyButton.setAttribute("aria-label", "Read the story behind " + track.title);
+        storyButton.innerHTML = '<span class="track-number">' + String(index + 1).padStart(2, "0") + '</span><span class="track-title"></span><span class="track-duration"></span><span class="track-chevron" aria-hidden="true">›</span>';
+        storyButton.querySelector(".track-title").textContent = track.title;
+        storyButton.querySelector(".track-duration").textContent = track.duration;
+        storyButton.addEventListener("click", () => {
+          selectTrack(index, false);
+        });
+
+        row.append(thumb, play, storyButton);
+        trackList.appendChild(row);
+      });
+    }
+
+    function selectTrack(index, shouldPlay) {
+      selectedIndex = (index + tracks.length) % tracks.length;
+      const track = tracks[selectedIndex];
+      document.getElementById("player-track-title").textContent =
+        String(selectedIndex + 1).padStart(2, "0") + " · " + track.title;
+      document.getElementById("track-duration").textContent = track.duration;
+      document.getElementById("story-number").textContent = String(selectedIndex + 1).padStart(2, "0");
+      document.getElementById("story-title").textContent = track.title;
+
+      const copy = document.getElementById("story-copy");
+      copy.replaceChildren();
+      track.story.forEach(paragraph => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        copy.appendChild(p);
+      });
+
+      const quote = document.getElementById("story-quote");
+      quote.replaceChildren();
+      if (track.quote) {
+        quote.hidden = false;
+        quote.append(document.createTextNode("“" + track.quote + "”"));
+        const cite = document.createElement("cite");
+        cite.textContent = "GS";
+        quote.appendChild(cite);
+      } else {
+        quote.hidden = true;
+      }
+
+      const soundcloudLink = document.getElementById("soundcloud-link");
+      const storySoundcloud = document.getElementById("story-soundcloud");
+      [soundcloudLink, storySoundcloud].forEach(link => {
+        if (track.soundcloud) {
+          link.href = track.soundcloud;
+          link.hidden = false;
+        } else {
+          link.hidden = true;
+          link.removeAttribute("href");
+        }
+      });
+
+      renderTrackList();
+      if (shouldPlay) {
+        if (!track.audio) {
+          status.textContent = "The story has changed to " + track.title + ". The exact Bunny.net MP3 URL still needs to be added before playback can start.";
+          return;
+        }
+        if (audio.src !== new URL(track.audio, window.location.href).href) {
+          audio.src = track.audio;
+        }
+        audio.play().then(() => {
+          playSymbol.textContent = "Ⅱ";
+          playToggle.setAttribute("aria-label", "Pause selected composition");
+          status.textContent = "Now playing " + track.title + ".";
+        }).catch(() => {
+          status.textContent = "Playback could not start. Check the audio URL and try again.";
+        });
+      } else {
+        status.textContent = "Showing the story for " + track.title + ". The currently playing composition, if any, will continue.";
+      }
+    }
+
+    playToggle.addEventListener("click", () => {
+      const track = tracks[selectedIndex];
+      if (!track.audio) {
+        status.textContent = "The player layout is ready, but the exact Bunny.net MP3 filename has not yet been connected for " + track.title + ".";
+        return;
+      }
+      if (audio.paused) {
+        audio.play().then(() => {
+          playSymbol.textContent = "Ⅱ";
+          playToggle.setAttribute("aria-label", "Pause selected composition");
+          status.textContent = "Now playing " + track.title + ".";
+        }).catch(() => { status.textContent = "Playback could not start. Check the audio URL and try again."; });
+      } else {
+        audio.pause();
+      }
+    });
+
+    document.getElementById("previous-track").addEventListener("click", () => selectTrack(selectedIndex - 1, true));
+    document.getElementById("next-track").addEventListener("click", () => selectTrack(selectedIndex + 1, true));
+    audio.addEventListener("play", () => { playSymbol.textContent = "Ⅱ"; playToggle.setAttribute("aria-label", "Pause selected composition"); });
+    audio.addEventListener("pause", () => { playSymbol.textContent = "▶"; playToggle.setAttribute("aria-label", "Play selected composition"); });
+    audio.addEventListener("timeupdate", () => {
+      document.getElementById("current-time").textContent = formatTime(audio.currentTime);
+      seekBar.value = audio.duration ? String((audio.currentTime / audio.duration) * 100) : "0";
+    });
+    audio.addEventListener("ended", () => selectTrack(selectedIndex + 1, true));
+    audio.addEventListener("error", () => {
+      if (tracks[selectedIndex].audio) status.textContent = "The audio file could not be loaded. Please check the MP3 URL.";
+    });
+    seekBar.addEventListener("input", () => {
+      if (audio.duration) audio.currentTime = (Number(seekBar.value) / 100) * audio.duration;
+    });
+    volumeBar.addEventListener("input", () => { audio.volume = Number(volumeBar.value); });
+    audio.volume = Number(volumeBar.value);
+
+    renderTrackList();
+    selectTrack(0, false);
+  </script>
 </body>
 </html>
