@@ -35,7 +35,7 @@
     </header>
 
     <section class="persistent-player" aria-label="Album audio player">
-      <img class="player-cover" src="../images/reflections-album-art.jpg" alt="Reflections album artwork"
+      <img class="player-cover" src="../images/Music-Reflections1.jpg" alt="Reflections album artwork" id="player-cover"
            onerror="this.style.visibility='hidden'">
       <div class="player-track-meta">
         <span class="now-playing-label">NOW SELECTED</span>
@@ -56,8 +56,8 @@
         <span aria-hidden="true">◖))</span>
         <input id="volume-bar" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume">
       </label>
-      <a id="soundcloud-link" class="soundcloud-link" href="#" target="_blank" rel="noopener noreferrer" hidden>
-        <span aria-hidden="true">☁</span> LISTEN ON SOUNDCLOUD
+      <a id="soundcloud-link" class="soundcloud-link" href="https://soundcloud.com/geriansoiree/sets/gerian-soiree-reflections" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">☁</span> OPEN ALBUM ON SOUNDCLOUD
       </a>
       <p id="player-status" class="player-status" role="status" aria-live="polite">Choose a composition to read its story. Audio links will be connected after the MP3 filenames are confirmed.</p>
       <audio id="album-audio" preload="metadata"></audio>
@@ -107,7 +107,7 @@
     */
     const tracks = [
       {
-        title: "Reflections", duration: "8:19", audio: "", soundcloud: "",
+        title: "Reflections", duration: "8:19", artwork: "Music-Reflections1.jpg", audio: "", soundcloud: "",
         story: [
           "During the past ten years of writing and composing music, I have often wondered where the music I hear internally, before I create it, actually comes from.",
           "Reflections did not arrive all at once. It developed gradually, growing from familiar musical ideas into something with its own identity. Along the way, it evolved into different interpretations and sounds, including classical vocal and guitar versions. The cinematic version of the composition is also available on my YouTube page under the same title.",
@@ -118,7 +118,7 @@
         quote: "Perhaps the question is not where music comes from. Perhaps the real question is whether we are quiet enough to notice it when it arrives."
       },
       {
-        title: "Blomme", duration: "6:24", audio: "", soundcloud: "",
+        title: "Blomme", duration: "6:24", artwork: "Music-Blomme2.jpg", audio: "", soundcloud: "",
         story: [
           "After a long separation from music, returning to creativity later in life became an important part of my journey.",
           "I composed Blomme around the time we celebrated the 100th anniversary of Afrikaans becoming an official language. Blomme, which translates to “flowers” in Afrikaans, carries a deeply personal connection to my late mother. She also liked to write poems, and she once wrote a beautiful poem about flowers. Her message was simple: we should not place flowers on her grave, because we gave her all the most beautiful flowers throughout her entire lifetime.",
@@ -128,7 +128,7 @@
         quote: ""
       },
       {
-        title: "Blue", duration: "5:56", audio: "", soundcloud: "",
+        title: "Blue", duration: "5:56", artwork: "Music-Blue3.jpg", audio: "", soundcloud: "",
         story: [
           "I remember sitting at the piano, as I often do, simply putting my hands on the keys and playing a few notes. Sometimes I play things randomly, just to see what happens. On this occasion, I heard something in the way one particular note seemed to linger before moving into the next.",
           "That small moment became the beginning of Blue.",
@@ -140,7 +140,7 @@
         quote: ""
       },
       {
-        title: "Younger Today", duration: "6:08", audio: "", soundcloud: "",
+        title: "Younger Today", duration: "6:08", artwork: "Music-Younger Today4.jpg", audio: "", soundcloud: "",
         story: [
           "Younger Today was written for my son when he left home to work abroad.",
           "There is something about watching your children leave home that makes you reflect on how quickly life moves. You are happy for them, proud of them, but at the same time, you realise that another chapter of their life, and your own, has begun.",
@@ -151,7 +151,7 @@
         quote: ""
       },
       {
-        title: "Seeds", duration: "5:41", audio: "", soundcloud: "",
+        title: "Seeds", duration: "5:41", artwork: "Music-Seeds5.jpg", audio: "", soundcloud: "",
         story: [
           "Seeds began with a simple thought about what we leave behind.",
           "When we create something, we are planting something that may continue to exist long after we have moved on. It might be music, a piece of writing, an idea, or simply something we have given to another person. We don't always know where those things will eventually lead.",
@@ -163,7 +163,7 @@
         quote: ""
       },
       {
-        title: "The Naked Soul", duration: "6:17", audio: "", soundcloud: "",
+        title: "The Naked Soul", duration: "6:17", artwork: "Music-The Naked Soul6.jpg", audio: "", soundcloud: "",
         story: [
           "The Naked Soul comes from a more vulnerable part of my creative journey.",
           "Imposter syndrome is something I still experience. When you create music in a way that you cannot always fully explain, questions can creep in. Where does this come from? Am I really good enough? What will people think?",
@@ -174,7 +174,7 @@
         quote: ""
       },
       {
-        title: "Emma's Garden", duration: "7:03", audio: "", soundcloud: "",
+        title: "Emma's Garden", duration: "7:03", artwork: "Music-Emma's Garden7.jpg", audio: "", soundcloud: "",
         story: [
           "Emma's Garden carries a very personal story for me.",
           "My late mother-in-law had a profound influence on the way I came to understand the emotional power of music. As Alzheimer's gradually changed her world, there was one particular piece of music I would often play for her.",
@@ -186,7 +186,7 @@
         quote: ""
       },
       {
-        title: "Questions", duration: "6:36", audio: "", soundcloud: "",
+        title: "Questions", duration: "6:36", artwork: "Music-Questions8.jpg", audio: "", soundcloud: "",
         story: [
           "Questions began in much the same way as some of my other compositions. I often record long sessions at the piano without knowing whether anything will come from them. Later, I listen back to those recordings and sometimes discover a small section that makes me want to explore it further.",
           "Questions grew from one of those moments.",
@@ -198,7 +198,7 @@
         quote: ""
       },
       {
-        title: "Mothers", duration: "7:12", audio: "", soundcloud: "",
+        title: "Mothers", duration: "7:12", artwork: "Music-Mothers9.jpg", audio: "", soundcloud: "",
         story: [
           "Some compositions take weeks or even months to develop. Others seem to arrive almost fully formed.",
           "Mothers was one of the fastest pieces I have ever created. From the moment I sat down at the piano to exporting the completed composition took only around two and a half hours. The music seemed to know exactly where it wanted to go, and my role was simply to follow it.",
@@ -211,7 +211,7 @@
         quote: ""
       },
       {
-        title: "Tomorrow", duration: "6:48", audio: "", soundcloud: "",
+        title: "Tomorrow", duration: "6:48", artwork: "Music-Tomorrow10.jpg", audio: "", soundcloud: "",
         story: [
           "Tomorrow holds a special place in my journey because it was one of the first pieces I composed after returning to music.",
           "I had recently started exploring the piano again on my Roland FP-10 digital piano. At first, I wasn't really trying to compose anything. I would sit down, play a few things almost randomly, and simply explore what came naturally.",
@@ -250,7 +250,7 @@
 
         const thumb = document.createElement("img");
         thumb.className = "track-thumb";
-        thumb.src = "../images/reflections-album-art.jpg";
+        thumb.src = "../images/" + track.artwork;
         thumb.alt = "";
         thumb.onerror = () => { thumb.style.visibility = "hidden"; };
 
@@ -284,6 +284,8 @@
       const track = tracks[selectedIndex];
       document.getElementById("player-track-title").textContent =
         String(selectedIndex + 1).padStart(2, "0") + " · " + track.title;
+      document.getElementById("player-cover").src = "../images/" + track.artwork;
+      document.getElementById("player-cover").alt = track.title + " artwork";
       document.getElementById("track-duration").textContent = track.duration;
       document.getElementById("story-number").textContent = String(selectedIndex + 1).padStart(2, "0");
       document.getElementById("story-title").textContent = track.title;
