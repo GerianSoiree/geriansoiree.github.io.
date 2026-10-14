@@ -36,7 +36,7 @@
 .music-hero {
   position: relative;
   isolation: isolate;
-  min-height: clamp(250px, 27vw, 440px);
+  min-height: clamp(170px, 16vw, 285px);
   padding: clamp(22px, 3.2vw, 56px) clamp(22px, 4vw, 76px) 26px;
   color: #fff5dc;
   background-color: #483521;
@@ -131,7 +131,7 @@
 .persistent-player {
   position: relative;
   display: grid;
-  grid-template-columns: 82px minmax(150px, 1fr) auto minmax(160px, 1.35fr) minmax(105px, .55fr) auto;
+  grid-template-columns: 112px minmax(150px, 1fr) auto minmax(160px, 1.35fr) minmax(105px, .55fr) auto;
   align-items: center;
   gap: clamp(12px, 1.5vw, 24px);
   margin: 0;
@@ -144,7 +144,7 @@
 }
 .player-cover {
   display: block;
-  width: 82px;
+  width: 112px;
   aspect-ratio: 1;
   object-fit: cover;
   border: 1px solid var(--gold);
@@ -164,7 +164,14 @@
   background: transparent;
   border: 0;
 }
-.transport-button { width: 28px; height: 36px; font-family: Arial, sans-serif !important; font-size: 17px !important; }
+.transport-button { width: 28px; height: 36px; padding: 0; }
+.transport-icon { position: relative; display: block; width: 18px; height: 18px; }
+.transport-icon::before { content: ""; position: absolute; top: 3px; height: 12px; width: 2px; background: currentColor; }
+.transport-icon::after { content: ""; position: absolute; top: 2px; width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.transport-prev::before { left: 2px; }
+.transport-prev::after { left: 5px; border-right: 11px solid currentColor; }
+.transport-next::before { right: 2px; }
+.transport-next::after { right: 5px; border-left: 11px solid currentColor; }
 .play-button {
   width: 54px;
   aspect-ratio: 1;
@@ -173,6 +180,8 @@
   color: var(--gold);
   font-size: 22px !important;
 }
+.play-button #play-symbol { display: block; line-height: 1; transform: translateX(2px); }
+.play-button.is-playing #play-symbol { transform: none; font-size: 19px; letter-spacing: -2px; }
 .play-button:hover, .play-button:focus-visible { color: var(--ink); background: var(--gold); outline: none; }
 .timeline-area { min-width: 0; }
 .waveform {
@@ -309,7 +318,7 @@
   background: transparent;
 }
 .track-story-select:hover, .track-story-select:focus-visible { background: rgba(210,165,76,.18); outline: 1px solid rgba(152,108,36,.35); }
-.track-number { color: #7c5c2b; font-size: 12px; }
+.track-number { color: inherit; font-size: inherit; }
 .track-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: clamp(12px, .94vw, 15px); }
 .track-duration { color: #675337; text-align: right; font-size: 12px; }
 .track-chevron { justify-self: end; font: 22px Arial, sans-serif; color: #80612d; }
@@ -334,15 +343,16 @@
   overflow: hidden;
   padding: clamp(20px, 2.1vw, 34px);
   background-color: #f8efdf;
-  background-image: linear-gradient(90deg, rgba(250,242,226,.99) 0%, rgba(250,242,226,.96) 43%, rgba(250,242,226,.58) 69%, rgba(250,242,226,.08) 100%), url("../images/Music-Hero1.jpg");
+  background-image: none;
   background-size: cover;
   background-position: center right;
 }
+.music-story::before { content: ""; position: absolute; z-index: 0; inset: 0; background-image: url("../images/Music-Crest-Watermark.png"); background-repeat: no-repeat; background-position: center; background-size: min(72%, 560px) auto; opacity: .09; pointer-events: none; }
 .story-image-layer { display: none; }
 .story-content { position: relative; z-index: 1; max-width: 760px; }
 .section-kicker { font-size: clamp(14px, 1.15vw, 20px); }
 .story-header .gold-rule { width: 210px; margin-bottom: 18px; }
-.story-number { margin: 0; color: #7a5b2c; font-size: 12px; letter-spacing: .16em; }
+.story-number { color: inherit; font-size: inherit; letter-spacing: normal; }
 .story-header h2 { margin: 2px 0 0; font-size: clamp(27px, 2.35vw, 40px); line-height: 1.08; font-weight: 400; }
 .story-byline { margin: 2px 0 14px; color: #6b5431; font-size: 15px; letter-spacing: .04em; }
 .story-copy { font-size: clamp(13px, .97vw, 16px); line-height: 1.58; }
@@ -371,7 +381,7 @@
     grid-template-columns: 64px minmax(120px,1fr) auto minmax(130px,1fr);
     gap: 12px;
   }
-  .player-cover { width: 64px; }
+  .player-cover { width: 86px; }
   .volume-control { display: none; }
   .soundcloud-link { grid-column: 4; justify-self: end; }
   .player-status { grid-row: 2; }
@@ -391,7 +401,7 @@
     grid-template-columns: 58px minmax(0,1fr) auto;
     padding: 13px 15px;
   }
-  .player-cover { width: 58px; }
+  .player-cover { width: 72px; }
   .player-track-meta strong { font-size: 15px; }
   .player-transport { gap: 5px; }
   .play-button { width: 42px; font-size: 18px !important; }
