@@ -40,7 +40,7 @@
   padding: clamp(22px, 3.2vw, 56px) clamp(22px, 4vw, 76px) 26px;
   color: #fff5dc;
   background-color: #483521;
-  background-image: url("../images/music-hero.jpg");
+  background-image: url("../images/Music-Hero2.jpg");
   background-size: cover;
   background-position: center 54%;
   border-bottom: 2px solid var(--gold);
@@ -334,7 +334,7 @@
   overflow: hidden;
   padding: clamp(20px, 2.1vw, 34px);
   background-color: #f8efdf;
-  background-image: linear-gradient(90deg, rgba(250,242,226,.99) 0%, rgba(250,242,226,.96) 43%, rgba(250,242,226,.58) 69%, rgba(250,242,226,.08) 100%), url("../images/music-story-piano.jpg");
+  background-image: linear-gradient(90deg, rgba(250,242,226,.99) 0%, rgba(250,242,226,.96) 43%, rgba(250,242,226,.58) 69%, rgba(250,242,226,.08) 100%), url("../images/Music-Hero1.jpg");
   background-size: cover;
   background-position: center right;
 }
