@@ -45,7 +45,7 @@
       <div class="player-transport">
         <button class="transport-button" id="previous-track" type="button" aria-label="Previous track">|◀</button>
         <button class="play-button" id="play-toggle" type="button" aria-label="Play selected composition"><span id="play-symbol">▶</span></button>
-        <button class="transport-button" id="next-track" type="button" aria-label="Next track">▶|</button>
+        <button class="transport-button" id="next-track" type="button" aria-label="Next track"><span class="transport-icon transport-next" aria-hidden="true"></span></button>
       </div>
       <div class="timeline-area">
         <div class="waveform" aria-hidden="true"></div>
@@ -59,7 +59,7 @@
       <a id="soundcloud-link" class="soundcloud-link" href="https://soundcloud.com/geriansoiree/sets/gerian-soiree-reflections" target="_blank" rel="noopener noreferrer">
         <span aria-hidden="true">☁</span> OPEN ALBUM ON SOUNDCLOUD
       </a>
-      <p id="player-status" class="player-status" role="status" aria-live="polite">Choose a composition to read its story. Audio links will be connected after the MP3 filenames are confirmed.</p>
+      <p id="player-status" class="player-status" role="status" aria-live="polite">Choose a title to read its story, or use the player controls to listen.</p>
       <audio id="album-audio" preload="metadata"></audio>
     </section>
 
@@ -83,8 +83,7 @@
           <header class="story-header">
             <p class="section-kicker">THE STORY BEHIND THE MUSIC</p>
             <span class="gold-rule" aria-hidden="true"></span>
-            <p id="story-number" class="story-number">01</p>
-            <h2 id="story-title">Reflections</h2>
+            <h2 id="story-title"><span id="story-number" class="story-number">1.&nbsp;&nbsp;</span><span id="story-title-text">Reflections</span></h2>
             <p class="story-byline">Gerian Soirée</p>
           </header>
           <div id="story-copy" class="story-copy"></div>
@@ -267,7 +266,7 @@
         storyButton.className = "track-story-select";
         storyButton.type = "button";
         storyButton.setAttribute("aria-label", "Read the story behind " + track.title);
-        storyButton.innerHTML = '<span class="track-number">' + String(index + 1).padStart(2, "0") + '</span><span class="track-title"></span><span class="track-duration"></span><span class="track-chevron" aria-hidden="true">›</span>';
+        storyButton.innerHTML = '<span class="track-number">' + (index + 1) + '</span><span class="track-title"></span><span class="track-duration"></span><span class="track-chevron" aria-hidden="true">›</span>';
         storyButton.querySelector(".track-title").textContent = track.title;
         storyButton.querySelector(".track-duration").textContent = track.duration;
         storyButton.addEventListener("click", () => {
@@ -283,12 +282,12 @@
       selectedIndex = (index + tracks.length) % tracks.length;
       const track = tracks[selectedIndex];
       document.getElementById("player-track-title").textContent =
-        String(selectedIndex + 1).padStart(2, "0") + " · " + track.title;
+        (selectedIndex + 1) + ".  " + track.title;
       document.getElementById("player-cover").src = "../images/" + track.artwork;
       document.getElementById("player-cover").alt = track.title + " artwork";
       document.getElementById("track-duration").textContent = track.duration;
-      document.getElementById("story-number").textContent = String(selectedIndex + 1).padStart(2, "0");
-      document.getElementById("story-title").textContent = track.title;
+      document.getElementById("story-number").textContent = (selectedIndex + 1) + ".  ";
+      document.getElementById("story-title-text").textContent = track.title;
 
       const copy = document.getElementById("story-copy");
       copy.replaceChildren();
@@ -332,7 +331,7 @@
           audio.src = track.audio;
         }
         audio.play().then(() => {
-          playSymbol.textContent = "Ⅱ";
+          playToggle.classList.add("is-playing");
           playToggle.setAttribute("aria-label", "Pause selected composition");
           status.textContent = "Now playing " + track.title + ".";
         }).catch(() => {
@@ -362,8 +361,8 @@
 
     document.getElementById("previous-track").addEventListener("click", () => selectTrack(selectedIndex - 1, true));
     document.getElementById("next-track").addEventListener("click", () => selectTrack(selectedIndex + 1, true));
-    audio.addEventListener("play", () => { playSymbol.textContent = "Ⅱ"; playToggle.setAttribute("aria-label", "Pause selected composition"); });
-    audio.addEventListener("pause", () => { playSymbol.textContent = "▶"; playToggle.setAttribute("aria-label", "Play selected composition"); });
+    audio.addEventListener("play", () => { playToggle.classList.add("is-playing"); playToggle.setAttribute("aria-label", "Pause selected composition"); });
+    audio.addEventListener("pause", () => { playToggle.classList.remove("is-playing"); playToggle.setAttribute("aria-label", "Play selected composition"); });
     audio.addEventListener("timeupdate", () => {
       document.getElementById("current-time").textContent = formatTime(audio.currentTime);
       seekBar.value = audio.duration ? String((audio.currentTime / audio.duration) * 100) : "0";
