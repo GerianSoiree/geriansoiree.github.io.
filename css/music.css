@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
 /* =========================================================
    GERIAN SOIRÉE | REFLECTIONS MUSIC PAGE
    Dedicated styling only. Do not edit shared css/style.css.
@@ -16,7 +18,7 @@
   min-height: 100vh;
   color: var(--ink);
   background: #17130f;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Lora", Georgia, serif;
 }
 .music-page *, .music-page *::before, .music-page *::after { box-sizing: border-box; }
 .music-page button, .music-page input, .music-page a { font: inherit; }
@@ -81,8 +83,16 @@
   text-shadow: 0 0 14px rgba(216,170,73,.24);
 }
 .brand-wordmark { display: grid; gap: 5px; }
+.brand-logo-image {
+  display: block;
+  width: clamp(54px, 5.7vw, 92px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
 .brand-script {
-  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-family: "Great Vibes", cursive;
   font-size: clamp(25px, 3.5vw, 56px);
   font-style: italic;
   line-height: 1;
@@ -160,7 +170,7 @@
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  color: #fff4da;
+  color: var(--gold);
   background: transparent;
   border: 0;
 }
@@ -347,7 +357,7 @@
   background-size: cover;
   background-position: center right;
 }
-.music-story::before { content: ""; position: absolute; z-index: 0; inset: 0; background-image: url("../images/Music-Crest-Watermark.png"); background-repeat: no-repeat; background-position: center; background-size: min(72%, 560px) auto; opacity: .09; pointer-events: none; }
+.music-story::before { content: ""; position: absolute; z-index: 0; inset: 0; background-image: url("../images/Music-Crest-Watermark.png"); background-repeat: no-repeat; background-position: center; background-size: min(82.8%, 644px) auto; opacity: .09; pointer-events: none; }
 .story-image-layer { display: none; }
 .story-content { position: relative; z-index: 1; max-width: 760px; }
 .section-kicker { font-size: clamp(14px, 1.15vw, 20px); }
@@ -391,6 +401,7 @@
   .music-hero { min-height: 260px; padding: 20px; background-position: center; }
   .hero-top { flex-direction: column; gap: 20px; }
   .brand-monogram { width: 54px; font-size: 25px; }
+  .brand-logo-image { width: 54px; }
   .brand-script { font-size: 30px; }
   .music-nav { justify-content: flex-start; }
   .nav-link { padding: 8px 11px; font-size: 10px; }
