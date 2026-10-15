@@ -56,10 +56,9 @@
     linear-gradient(0deg, rgba(13, 11, 9, .52) 0%, transparent 58%);
 }
 .hero-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
+  display: block;
+  position: relative;
+  min-height: 1px;
 }
 .brand-lockup {
   display: inline-flex;
@@ -93,7 +92,7 @@
 }
 .brand-script {
   font-family: "Great Vibes", cursive;
-  font-size: clamp(25px, 3.5vw, 56px);
+  font-size: clamp(29px, 4vw, 64px);
   font-style: italic;
   line-height: 1;
   white-space: nowrap;
@@ -107,7 +106,7 @@
 }
 .brand-subtitle { text-align: center; }
 .brand-tagline { letter-spacing: .15em; }
-.music-nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.music-nav { position: absolute; top: 0; right: 0; z-index: 3; display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
 .nav-link {
   padding: 10px 16px;
   border: 1px solid rgba(229, 184, 85, .85);
@@ -399,7 +398,8 @@
 }
 @media (max-width: 760px) {
   .music-hero { min-height: 260px; padding: 20px; background-position: center; }
-  .hero-top { flex-direction: column; gap: 20px; }
+  .hero-top { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  .music-nav { position: static; justify-content: flex-start; }
   .brand-monogram { width: 54px; font-size: 25px; }
   .brand-logo-image { width: 54px; }
   .brand-script { font-size: 30px; }
