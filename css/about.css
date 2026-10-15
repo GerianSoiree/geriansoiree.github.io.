@@ -220,25 +220,21 @@ body.about-page {
 
 .about-hero-content {
     position: absolute;
-
     left: 5.5%;
-    bottom: 18%;
-
+    bottom: 15%;
     z-index: 2;
+    max-width: 89%;
 }
 
 .about-hero-title {
-   margin: 0;
-
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: clamp(18px, 2.1vw, 40px);
+    row-gap: 0;
+    margin: 0;
     color: var(--about-white);
-
-    font-family: 'Lora', Georgia, serif;
-
-    font-size: 60px;
-    font-weight: 700;
-    font-style: italic;
-    line-height: 1.05;
-
+    line-height: 1;
     text-shadow:
           0px 2px 3px rgba(0, 0, 0, 1),
           0px 0px 8px rgba(0, 0, 0, 1),
@@ -246,35 +242,29 @@ body.about-page {
           0px 0px 28px rgba(0, 0, 0, 0.85);
 }
 
-.about-hero-name {
-    margin: 12px 0 0;
-
-    color: var(--about-white);
-
-    font-size: clamp(20px, 1.9vw, 36px);
-
+.about-title-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(58px, 4.6vw, 82px);
     font-weight: 400;
+    font-style: normal;
+    white-space: nowrap;
+}
 
-    letter-spacing: 0.40em;
-    text-transform: uppercase;
-
-   text-shadow:
-       0px 2px 3px rgba(0, 0, 0, 1),
-       0px 0px 8px rgba(0, 0, 0, 1),
-       0px 0px 16px rgba(0, 0, 0, 0.95),
-       0px 0px 28px rgba(0, 0, 0, 0.85);
+.about-title-name {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(30px, 2.65vw, 48px);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 0.015em;
+    white-space: nowrap;
 }
 
 .about-hero-tagline {
-    margin: 12px 0 0;
-
+    margin: 8px 0 0;
     color: var(--about-white);
-
-    font-size: clamp(16px, 1.25vw, 24px);
-
+    font-size: clamp(15px, 1.15vw, 22px);
     font-style: italic;
-
-   text-shadow:
+    text-shadow:
        0px 2px 3px rgba(0, 0, 0, 1),
        0px 0px 8px rgba(0, 0, 0, 1),
        0px 0px 16px rgba(0, 0, 0, 0.95),
@@ -849,6 +839,12 @@ body.about-page {
         max-width: 88%;
     }
 
+    .about-hero-content {
+        left: 6%;
+        bottom: 8%;
+        max-width: 88%;
+    }
+
     .about-hero-title {
         column-gap: 14px;
         row-gap: 2px;
@@ -952,6 +948,12 @@ body.about-page {
     .about-hero {
         height: 100vw;
         min-height: 430px;
+    }
+
+    .about-hero-content {
+        left: 6%;
+        bottom: 8%;
+        max-width: 88%;
     }
 
     .about-hero-content {
