@@ -1,0 +1,305 @@
+/* Reflection 1 layout prototype only.
+   Keeps the shared master stylesheet and all other pages unchanged. */
+
+/* Shorter hero banner, with original overlay typography retained. */
+.reflection-hero {
+    height: 35vw;
+    min-height: 500px;
+    max-height: 820px;
+}
+
+/* Make the listen/player row span the full content width. */
+.reflection-one-prototype {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 28px 4.3% 38px;
+}
+
+.reflection-one-prototype .reflection-listen {
+    order: 1;
+    width: 100%;
+    border-left: 0;
+    border-bottom: 1px solid #b88a4a;
+    padding: 0 0 24px;
+}
+
+.reflection-one-prototype .music-panel {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.reflection-one-prototype .music-artwork {
+    flex: 0 0 124px;
+}
+
+.reflection-one-prototype .music-artwork img {
+    display: block;
+    width: 124px;
+    height: 124px;
+    object-fit: cover;
+}
+
+.reflection-one-prototype .music-information {
+    flex: 1;
+    min-width: 0;
+}
+
+.reflection-one-prototype .music-reflection-number {
+    margin-bottom: 2px;
+}
+
+.reflection-one-prototype .music-information h3 {
+    font-size: 32px;
+}
+
+.reflection-one-prototype .music-description {
+    margin: 5px 0 12px;
+}
+
+.reflection-one-prototype .music-player {
+    gap: 12px;
+    max-width: 100%;
+}
+
+.reflection-one-prototype .play-button {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+}
+
+.reflection-one-prototype .audio-player {
+    flex: 1;
+    min-width: 0;
+}
+
+/* The story now receives the full beige content area. */
+.reflection-one-prototype .reflection-story {
+    order: 2;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 8px 0 4px;
+}
+
+.reflection-one-prototype .reflection-story::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: url("../images/Music-Crest-Watermark.png");
+    background-repeat: no-repeat;
+    background-position: center 42%;
+    background-size: min(48%, 560px) auto;
+    opacity: 0.09;
+    pointer-events: none;
+}
+
+.reflection-one-prototype .reflection-body {
+    max-width: 100%;
+}
+
+.reflection-one-prototype .bottom-reflection {
+    order: 3;
+    width: 100%;
+    margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+    .reflection-hero {
+        height: 50vw;
+        min-height: 500px;
+        max-height: 680px;
+    }
+
+    .reflection-one-prototype .music-artwork {
+        flex-basis: 110px;
+    }
+
+    .reflection-one-prototype .music-artwork img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .reflection-one-prototype .music-information h3 {
+        font-size: 28px;
+    }
+
+    .reflection-one-prototype .reflection-body {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 760px) {
+    .reflection-hero {
+        height: 680px;
+        min-height: 680px;
+        max-height: none;
+    }
+
+    .reflection-hero-content {
+        left: 5%;
+        bottom: 8%;
+        width: 90%;
+    }
+
+    .reflection-number {
+        font-size: 58px;
+        padding-top: 6px;
+    }
+
+    .reflection-hero-content h1 {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .reflection-subheading {
+        max-width: 95%;
+        margin-top: 10px;
+        font-size: 17px;
+    }
+
+    .hero-quote {
+        top: 44%;
+        right: 5%;
+        width: 36%;
+        font-size: 17px;
+        line-height: 1.3;
+    }
+
+    .hero-quote::after {
+        margin-top: 12px;
+    }
+
+    .reflection-navigation {
+        top: 12px;
+        left: 3%;
+        right: 3%;
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .reflection-navigation a {
+        padding: 0 8px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .reflection-navigation a + a::before {
+        height: 20px;
+    }
+
+    .nav-arrow {
+        font-size: 17px;
+        margin: 0 2px;
+    }
+
+    .gs-logo-link {
+        top: 48px;
+        left: 4%;
+    }
+
+    .gs-logo {
+        width: 78px;
+        height: 78px;
+    }
+
+    .gerian-soiree-name {
+        top: 126px;
+        left: 4%;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .reflection-one-prototype {
+        gap: 22px;
+        padding: 22px 5% 28px;
+    }
+
+    .reflection-one-prototype .music-panel {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .reflection-one-prototype .music-artwork {
+        flex: 0 0 82px;
+    }
+
+    .reflection-one-prototype .music-artwork img {
+        width: 82px;
+        height: 82px;
+    }
+
+    .reflection-one-prototype .music-information h3 {
+        font-size: 23px;
+    }
+
+    .reflection-one-prototype .music-reflection-number {
+        font-size: 14px;
+    }
+
+    .reflection-one-prototype .music-description {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .reflection-one-prototype .music-player {
+        gap: 7px;
+    }
+
+    .reflection-one-prototype .play-button {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .reflection-one-prototype .audio-player {
+        height: 36px;
+    }
+
+    .reflection-one-prototype .reflection-story::before {
+        background-size: 80% auto;
+        background-position: center 38%;
+    }
+
+    .reflection-one-prototype .bottom-reflection {
+        gap: 10px;
+    }
+
+    .reflection-one-prototype .bottom-reflection p {
+        font-size: 16px;
+        flex: 1 1 auto;
+    }
+}
+
+@media (max-width: 390px) {
+    .reflection-navigation a {
+        padding: 0 5px;
+        font-size: 9px;
+    }
+
+    .reflection-one-prototype .music-panel {
+        gap: 10px;
+    }
+
+    .reflection-one-prototype .music-artwork {
+        flex-basis: 68px;
+    }
+
+    .reflection-one-prototype .music-artwork img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .reflection-one-prototype .music-information h3 {
+        font-size: 20px;
+    }
+
+    .reflection-one-prototype .music-description {
+        font-size: 12px;
+    }
+}
