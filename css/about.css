@@ -181,7 +181,7 @@ body.about-page {
        Desktop target:
        approximately 250px at the 1920px reference width.
     */
-    height: 250px;
+    height: 215px;
 
     overflow: hidden;
 
@@ -707,7 +707,7 @@ body.about-page {
 @media (min-width: 1600px) {
 
     .about-hero {
-        height: 250px;
+        height: 215px;
     }
 
     .about-middle {
@@ -843,17 +843,29 @@ body.about-page {
         bottom: 10%;
     }
 
-    .about-hero-title {
-        font-size: clamp(54px, 13vw, 82px);
+    .about-hero-content {
+        left: 6%;
+        bottom: 8%;
+        max-width: 88%;
     }
 
-    .about-hero-name {
-        font-size: 18px;
-        letter-spacing: 0.25em;
+    .about-hero-title {
+        column-gap: 14px;
+        row-gap: 2px;
+    }
+
+    .about-title-script {
+        font-size: clamp(48px, 11vw, 68px);
+    }
+
+    .about-title-name {
+        font-size: clamp(24px, 5.4vw, 34px);
+        white-space: normal;
     }
 
     .about-hero-tagline {
-        font-size: 15px;
+        margin-top: 8px;
+        font-size: 14px;
     }
 
     .about-middle {
@@ -942,17 +954,27 @@ body.about-page {
         min-height: 430px;
     }
 
-    .about-hero-title {
-        font-size: 62px;
+    .about-hero-content {
+        left: 6%;
+        bottom: 8%;
+        max-width: 88%;
     }
 
-    .about-hero-name {
-        font-size: 17px;
-        letter-spacing: 0.20em;
+    .about-hero-title {
+        column-gap: 10px;
+    }
+
+    .about-title-script {
+        font-size: 52px;
+    }
+
+    .about-title-name {
+        font-size: clamp(22px, 6vw, 29px);
+        white-space: normal;
     }
 
     .about-hero-tagline {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .about-content {
