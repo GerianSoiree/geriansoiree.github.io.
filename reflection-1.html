@@ -8,6 +8,7 @@
     <title>Reflection 1 | Where Does the Music Come From? | Gerian Soirée</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reflection1-prototype.css">
 </head>
 
 <body>
@@ -89,19 +90,50 @@
          MAIN CONTENT SECTION
     =============================== -->
 
-    <main class="reflection-content">
+    <main class="reflection-content reflection-one-prototype">
 
-        <!-- THE REFLECTION -->
+        <!-- FULL-WIDTH LISTEN / PLAYER ROW -->
+        <section class="reflection-listen">
+
+            <h2>LISTEN</h2>
+            <div class="section-line"></div>
+
+            <div class="music-panel">
+                <div class="music-artwork">
+                    <img
+                        src="images/Reflection1-Hero.jpg"
+                        alt="Reflections composition artwork"
+                    >
+                </div>
+
+                <div class="music-information">
+                    <div class="music-reflection-number">Reflection 1</div>
+                    <h3>Reflections</h3>
+                    <p class="music-description">An original composition by Gerian Soirée</p>
+
+                    <div class="music-player">
+                        <button
+                            type="button"
+                            class="play-button"
+                            aria-label="Play Reflections"
+                        >▶</button>
+
+                        <audio class="audio-player" controls preload="none">
+                            <!-- Audio source will be added later -->
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FULL-WIDTH REFLECTION STORY -->
         <section class="reflection-story">
 
-            <h2>
-                THE REFLECTION
-            </h2>
-
+            <h2>THE REFLECTION</h2>
             <div class="section-line"></div>
 
             <div class="reflection-body">
-
                 <p>
                     There's a question I've carried for years.
                     <br>
@@ -136,93 +168,19 @@
                     I don't say that to sound mystical, but it's the closest I've come to an honest
                     answer.
                 </p>
-
             </div>
 
         </section>
 
-
-        <!-- ==============================
-             LISTEN SECTION
-        =============================== -->
-
-        <section class="reflection-listen">
-
-            <h2>
-                LISTEN
-            </h2>
-
-            <div class="section-line"></div>
-
-            <div class="music-panel">
-
-                <!-- MUSIC ARTWORK -->
-                <div class="music-artwork">
-                    <img
-                        src="images/Reflection1-Hero.jpg"
-                        alt="Reflections composition artwork"
-                    >
-                </div>
-
-                <!-- MUSIC INFORMATION -->
-                <div class="music-information">
-
-                    <div class="music-reflection-number">
-                        Reflection 1
-                    </div>
-
-                    <h3>
-                        Reflections
-                    </h3>
-
-                    <p class="music-description">
-                        An original composition by Gerian Soirée
-                    </p>
-
-                    <!-- AUDIO PLAYER -->
-                    <div class="music-player">
-
-                        <button
-                            type="button"
-                            class="play-button"
-                            aria-label="Play Reflections"
-                        >
-                            ▶
-                        </button>
-
-                        <audio
-                            class="audio-player"
-                            controls
-                            preload="none"
-                        >
-                            <!-- Audio source will be added later -->
-                        </audio>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             BOTTOM REFLECTION / TAGLINE
-        =============================== -->
-
+        <!-- BOTTOM REFLECTION / TAGLINE -->
         <section class="bottom-reflection">
-
             <div class="bottom-line"></div>
-
             <p>
                 Maybe the question was never really “where does it come from.”
                 <br>
                 Maybe it’s simply this… “are we quiet enough to notice it, when it arrives”.
             </p>
-
             <div class="bottom-line"></div>
-
         </section>
 
     </main>
