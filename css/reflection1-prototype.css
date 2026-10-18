@@ -15,7 +15,7 @@
 }
 
 .reflection-number {
-    font-size: 78px;
+    font-size: 82px;
     line-height: 1.02;
     padding-top: 4px;
     margin-bottom: 0;
@@ -43,6 +43,12 @@
 
 .hero-quote::after {
     margin-top: 16px;
+}
+
+/* Darken the name beneath the GS crest for stronger contrast. */
+.gerian-soiree-name {
+    color: #17130f;
+    text-shadow: 0 1px 2px rgba(255, 244, 216, 0.9), 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Compact solid navigation buttons, prototype for review on Reflection 1. */
@@ -73,9 +79,9 @@
 
 .reflection-navigation a:hover,
 .reflection-navigation a:focus-visible {
-    color: #17130f;
-    background: #e5b544;
-    border-color: #e5b544;
+    color: #ffffff;
+    background: rgba(16, 16, 15, 0.78);
+    border-color: rgba(229, 181, 68, 0.9);
     outline: none;
 }
 
@@ -200,7 +206,7 @@
     }
 
     .reflection-number {
-        font-size: 64px;
+        font-size: 67px;
     }
 
     .reflection-hero-content h1 {
@@ -261,7 +267,7 @@
     }
 
     .reflection-number {
-        font-size: 54px;
+        font-size: 57px;
         padding-top: 4px;
     }
 
@@ -289,19 +295,13 @@
     }
 
     .reflection-navigation {
-        top: 12px;
+        gap: 5px;
+        top: 10px;
         left: 3%;
         right: 3%;
         justify-content: center;
         flex-wrap: wrap;
         row-gap: 10px;
-    }
-
-    .reflection-navigation {
-        gap: 5px;
-        top: 10px;
-        left: 3%;
-        right: 3%;
     }
 
     .reflection-navigation a {
