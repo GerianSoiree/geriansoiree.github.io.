@@ -147,61 +147,47 @@ body {
 
 .collection-navigation {
     position: absolute;
-
-    top: 25px;
-    right: 4%;
-
+    top: 22px;
+    right: 3%;
     z-index: 10;
-
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .collection-navigation a {
-    position: relative;
-
-    padding: 0 24px;
-
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 13px;
+    border: 1px solid rgba(229, 181, 68, 0.9);
+    border-radius: 4px;
+    background: rgba(16, 16, 15, 0.78);
+    color: #e5b544;
     font-family: 'Lora', Georgia, serif;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 400;
-
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 1.15;
     text-transform: uppercase;
     text-decoration: none;
+    text-shadow: none;
+    white-space: nowrap;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
 
-    color: #f0cf70;
-
-    text-shadow:
-        0px 2px 3px rgba(0, 0, 0, 1),
-        0px 0px 8px rgba(0, 0, 0, 0.95),
-        0px 0px 18px rgba(0, 0, 0, 0.9);
-
-    transition: color 0.25s ease;
+.collection-navigation a:hover,
+.collection-navigation a:focus-visible,
+.collection-navigation .active {
+    color: #ffffff;
+    background: rgba(16, 16, 15, 0.78);
+    border-color: rgba(229, 181, 68, 0.9);
+    outline: none;
 }
 
 .collection-navigation a + a::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 50%;
-
-    width: 1px;
-    height: 38px;
-
-    transform: translateY(-50%);
-
-    background: rgba(255, 255, 255, 0.55);
-}
-
-.collection-navigation a:hover {
-    color: #ffffff;
-}
-
-.collection-navigation .active {
-    color: #ffffff;
+    display: none;
 }
 
 
@@ -571,8 +557,9 @@ body {
 @media (max-width: 1200px) {
 
     .collection-navigation a {
-        padding: 0 16px;
-        font-size: 15px;
+        min-height: 34px;
+        padding: 7px 10px;
+        font-size: 12px;
     }
 
     .collection-hero-content {
@@ -607,16 +594,14 @@ body {
     .collection-navigation {
         top: 20px;
         right: 3%;
+        gap: 5px;
     }
 
     .collection-navigation a {
-        padding: 0 9px;
-        font-size: 12px;
-        letter-spacing: 1px;
-    }
-
-    .collection-navigation a + a::before {
-        height: 28px;
+        min-height: 30px;
+        padding: 6px 8px;
+        font-size: 10px;
+        letter-spacing: 0.04em;
     }
 
     .collection-hero-content {
