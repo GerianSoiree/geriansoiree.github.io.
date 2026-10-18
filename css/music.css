@@ -145,20 +145,20 @@
   text-transform: none;
   background: linear-gradient(
     to bottom,
-    #fff8d6 0%,
-    #ffe9a0 10%,
-    #f7c94d 25%,
-    #d99b22 43%,
-    #fff0a8 55%,
-    #e8b63b 67%,
-    #c98a18 82%,
-    #8f590b 100%
+    #fffbe8 0%,
+    #fff0b5 12%,
+    #ffdc70 25%,
+    #f2b936 40%,
+    #fff4c6 52%,
+    #f8d05a 64%,
+    #e5a52a 80%,
+    #b87512 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 3px 18px rgba(0,0,0,.45);
-  filter: drop-shadow(0 2px 3px rgba(61, 29, 0, .85)) drop-shadow(0 0 8px rgba(255, 185, 42, .55));
+  text-shadow: 0 2px 14px rgba(0,0,0,.38), 0 0 1px rgba(255, 247, 205, .9);
+  filter: drop-shadow(0 2px 2px rgba(61, 29, 0, .72)) drop-shadow(0 0 7px rgba(255, 196, 62, .42));
 }
 .hero-subtitle { margin: 0; color: #fff1d5; font-size: 11px; letter-spacing: .42em; }
 
