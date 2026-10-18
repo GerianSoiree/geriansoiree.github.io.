@@ -243,19 +243,19 @@ body.about-page {
 }
 
 .about-title-script {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(58px, 4.6vw, 82px);
-    font-weight: 400;
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(30px, 2.65vw, 48px);
+    font-weight: 500;
     font-style: normal;
+    letter-spacing: 0.015em;
     white-space: nowrap;
 }
 
 .about-title-name {
-    font-family: 'Lora', Georgia, serif;
-    font-size: clamp(30px, 2.65vw, 48px);
-    font-weight: 500;
-    font-style: italic;
-    letter-spacing: 0.015em;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(58px, 4.6vw, 82px);
+    font-weight: 400;
+    font-style: normal;
     white-space: nowrap;
 }
 
