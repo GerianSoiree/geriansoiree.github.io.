@@ -145,34 +145,27 @@
   line-height: 1.08;
   letter-spacing: 0;
   text-transform: none;
-  /* Multi-band metallic gold: pale bevel, rich gold, bright reflective streak, and deep amber edge. */
+  /* Exact metallic-gold treatment used for Reflection 1–10 titles. */
   background: linear-gradient(
-    180deg,
-    #fffce8 0%,
-    #fff3b8 7%,
-    #f6cf58 15%,
-    #b97813 26%,
-    #ffe889 36%,
-    #fffbe0 43%,
-    #f8cb45 49%,
-    #d78e17 59%,
-    #ffe99a 68%,
-    #c47b0c 79%,
-    #f6c64c 88%,
-    #8b4b08 100%
+    to bottom,
+    #fff8d6 0%,
+    #ffe9a0 10%,
+    #f7c94d 25%,
+    #d99b22 43%,
+    #fff0a8 55%,
+    #e8b63b 67%,
+    #c98a18 82%,
+    #8f590b 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 225, .95),
-    0 -1px 0 rgba(255, 246, 193, .75),
-    0 3px 2px rgba(87, 40, 0, .68),
-    0 7px 14px rgba(0, 0, 0, .28);
+  -webkit-text-stroke: 0.7px rgba(108, 66, 7, 0.85);
   filter:
-    drop-shadow(0 1px 0 rgba(255, 239, 158, .8))
-    drop-shadow(0 2px 2px rgba(61, 29, 0, .58))
-    drop-shadow(0 0 8px rgba(255, 181, 31, .48));
+    drop-shadow(0px 2px 1px rgba(72, 39, 4, 0.95))
+    drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.9))
+    drop-shadow(0px 0px 9px rgba(218, 158, 39, 0.45));
+  overflow: visible;
 }
 .hero-subtitle {
   position: relative;
