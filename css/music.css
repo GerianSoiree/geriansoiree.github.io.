@@ -145,23 +145,34 @@
   line-height: 1.08;
   letter-spacing: 0;
   text-transform: none;
+  /* Multi-band metallic gold: pale bevel, rich gold, bright reflective streak, and deep amber edge. */
   background: linear-gradient(
-    to bottom,
-    #fffde8 0%,
-    #fff5b8 10%,
-    #ffdf63 22%,
-    #ffc52f 36%,
-    #fff9d7 48%,
-    #ffe36b 57%,
-    #f6b928 70%,
-    #d58a12 84%,
-    #a96108 100%
+    180deg,
+    #fffce8 0%,
+    #fff3b8 7%,
+    #f6cf58 15%,
+    #b97813 26%,
+    #ffe889 36%,
+    #fffbe0 43%,
+    #f8cb45 49%,
+    #d78e17 59%,
+    #ffe99a 68%,
+    #c47b0c 79%,
+    #f6c64c 88%,
+    #8b4b08 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 1px 0 rgba(255, 255, 225, .95), 0 3px 12px rgba(0,0,0,.32);
-  filter: drop-shadow(0 2px 2px rgba(61, 29, 0, .62)) drop-shadow(0 0 10px rgba(255, 194, 40, .58)) drop-shadow(0 0 1px rgba(255, 247, 196, .95));
+  text-shadow:
+    0 1px 0 rgba(255, 255, 225, .95),
+    0 -1px 0 rgba(255, 246, 193, .75),
+    0 3px 2px rgba(87, 40, 0, .68),
+    0 7px 14px rgba(0, 0, 0, .28);
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 239, 158, .8))
+    drop-shadow(0 2px 2px rgba(61, 29, 0, .58))
+    drop-shadow(0 0 8px rgba(255, 181, 31, .48));
 }
 .hero-subtitle { margin: 0; color: #fff1d5; font-size: 11px; letter-spacing: .42em; }
 
