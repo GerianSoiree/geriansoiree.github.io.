@@ -49,7 +49,8 @@
 .gerian-soiree-name {
     color: #000000;
     -webkit-text-fill-color: #000000;
-    -webkit-text-stroke: 0;
+    font-weight: 600;
+    -webkit-text-stroke: 0.25px #000000;
     text-shadow:
         0 0 3px rgba(255, 255, 255, 1),
         0 0 7px rgba(255, 255, 255, 0.95),
