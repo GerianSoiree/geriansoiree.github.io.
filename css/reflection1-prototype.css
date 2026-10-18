@@ -45,10 +45,15 @@
     margin-top: 16px;
 }
 
-/* Darken the name beneath the GS crest for stronger contrast. */
+/* Black lettering with a soft white glow to separate the name from the hero image. */
 .gerian-soiree-name {
-    color: #17130f;
-    text-shadow: 0 1px 2px rgba(255, 244, 216, 0.9), 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #000000;
+    -webkit-text-fill-color: #000000;
+    -webkit-text-stroke: 0;
+    text-shadow:
+        0 0 3px rgba(255, 255, 255, 1),
+        0 0 7px rgba(255, 255, 255, 0.95),
+        0 0 12px rgba(255, 255, 255, 0.75);
 }
 
 /* Compact solid navigation buttons, prototype for review on Reflection 1. */
