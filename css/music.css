@@ -448,12 +448,11 @@
 @media (max-width: 760px) {
   .music-hero { min-height: 260px; padding: 20px; background-position: center; }
   .hero-top { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
-  .music-nav { position: static; justify-content: flex-start; }
+  .music-nav { position: static; width: 100%; justify-content: center; flex-wrap: wrap; gap: 6px; }
   .brand-monogram { width: 54px; font-size: 25px; }
   .brand-logo-image { width: 54px; }
   .brand-script { font-size: 30px; }
-  .music-nav { justify-content: flex-start; }
-  .nav-link { padding: 8px 11px; font-size: 10px; }
+  .nav-link { padding: 7px 9px; font-size: 9px; letter-spacing: .04em; }
   .hero-title { margin-top: 24px; }
   .hero-title h1 { font-size: clamp(66px, 15vw, 96px); }
   .hero-title .eyebrow { font-size: 11px; letter-spacing: .12em; transform: translateY(-10px); margin-bottom: 6px; }
