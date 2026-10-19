@@ -295,6 +295,120 @@
             .landing-quote {
                 font-size: 23px;
             }
+
+        }
+
+        /* Phone and narrow-tablet optimisation. Desktop styling above 1100px stays unchanged. */
+        @media (max-width: 760px) {
+            .landing-page {
+                min-height: 100svh;
+                overflow: hidden;
+                background-position: 58% center;
+            }
+
+            .landing-logo-link {
+                top: 4px;
+                left: 5%;
+            }
+
+            .landing-logo {
+                width: 82px;
+                height: 82px;
+            }
+
+            .landing-name {
+                top: 92px;
+                left: 4.5%;
+                font-size: 11px;
+                letter-spacing: 1.5px;
+            }
+
+            .landing-content {
+                min-height: 100svh;
+                padding: 168px 6% 34px;
+            }
+
+            .landing-title {
+                font-size: clamp(64px, 12vw, 86px);
+                line-height: 1.05;
+            }
+
+            .landing-subtitle {
+                max-width: 100%;
+                margin-top: 12px;
+                font-size: clamp(17px, 3.4vw, 21px);
+                line-height: 1.4;
+            }
+
+            .landing-line {
+                margin: 18px 0 16px;
+            }
+
+            .landing-intro {
+                max-width: 100%;
+                margin-bottom: 24px;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .landing-button {
+                align-self: center;
+                width: min(320px, 100%);
+                padding: 13px 16px;
+                font-size: 14px;
+                letter-spacing: 1.4px;
+            }
+
+            .landing-button .nav-arrow {
+                font-size: 25px;
+            }
+
+            .landing-quote {
+                position: relative;
+                top: auto;
+                right: auto;
+                transform: none;
+                width: 88%;
+                margin: 0 auto 28px;
+                font-size: 20px;
+                line-height: 1.4;
+            }
+
+            .landing-quote::after {
+                margin-top: 14px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .landing-page {
+                background-position: 61% center;
+            }
+
+            .landing-content {
+                padding: 158px 6% 28px;
+            }
+
+            .landing-title {
+                font-size: clamp(58px, 13.5vw, 70px);
+            }
+
+            .landing-subtitle {
+                font-size: 16px;
+            }
+
+            .landing-intro {
+                font-size: 15px;
+                line-height: 1.55;
+            }
+
+            .landing-button {
+                font-size: 12px;
+                letter-spacing: 1.1px;
+            }
+
+            .landing-quote {
+                font-size: 18px;
+            }
         }
 
     </style>
