@@ -1049,3 +1049,133 @@ body.about-page {
         font-size: 6px;
     }
 }
+
+
+/* =========================================================
+   GS BRANDING IN THE ABOUT HERO
+   ========================================================= */
+.about-hero-brand {
+    position: absolute;
+    z-index: 5;
+    top: 8px;
+    left: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    color: var(--about-white);
+    text-shadow: 0 2px 8px rgba(0,0,0,.8);
+}
+
+.about-hero-brand-logo {
+    display: block;
+    width: 112px;
+    height: 112px;
+    object-fit: contain;
+}
+
+.about-hero-brand-name {
+    display: block;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.about-footer-brand {
+    display: none !important;
+}
+
+/* Give the desktop hero enough room for the brand and heading. */
+@media (min-width: 801px) {
+    .about-hero {
+        height: 340px;
+    }
+
+    .about-hero-content {
+        left: 6%;
+        bottom: 10%;
+        max-width: 88%;
+    }
+
+    .about-hero-brand-logo {
+        width: 112px;
+        height: 112px;
+    }
+}
+
+/* Mobile: centre branding above the About heading, matching Contact. */
+@media (max-width: 800px) {
+    .about-hero {
+        height: 100vw;
+        min-height: 560px;
+    }
+
+    .about-hero-brand {
+        top: 92px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        gap: 5px;
+    }
+
+    .about-hero-brand-logo {
+        width: 76px;
+        height: 76px;
+    }
+
+    .about-hero-brand-name {
+        font-size: 10px;
+        letter-spacing: 1.8px;
+        text-align: center;
+    }
+
+    .about-hero-content {
+        left: 6%;
+        right: 6%;
+        bottom: 8%;
+        max-width: 88%;
+    }
+
+    .about-hero-title {
+        justify-content: center;
+        text-align: center;
+        column-gap: 10px;
+        row-gap: 0;
+    }
+
+    .about-title-script {
+        font-size: clamp(42px, 10vw, 60px);
+    }
+
+    .about-title-name {
+        font-size: clamp(26px, 6vw, 36px);
+    }
+
+    .about-hero-tagline {
+        text-align: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-hero {
+        height: 125vw;
+        min-height: 590px;
+    }
+
+    .about-hero-brand {
+        top: 88px;
+    }
+
+    .about-hero-brand-logo {
+        width: 72px;
+        height: 72px;
+    }
+
+    .about-hero-content {
+        bottom: 7%;
+    }
+}
