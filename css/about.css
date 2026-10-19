@@ -936,18 +936,28 @@ body.about-page {
     }
 
     .about-nav {
+        top: 25px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: 0;
+        padding: 0 4%;
         justify-content: center;
     }
 
     .about-nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 5px;
     }
 
     .about-nav-links a {
         min-height: 27px;
-        padding: 5px 6px;
+        padding: 5px 5px;
         font-size: 8px;
-        letter-spacing: 0.02em;
+        letter-spacing: 0;
     }
 
     .about-content::before {
@@ -1008,13 +1018,31 @@ body.about-page {
         padding-right: 12%;
     }
 
+    .about-closing-content {
+        padding: 0 4% 118px;
+    }
+
+    .about-closing-line {
+        font-size: 16px;
+        line-height: 1.35;
+    }
+
     .about-footer-brand {
         right: 5%;
-        bottom: 24px;
+        bottom: 12px;
+    }
+
+    .about-footer-logo {
+        margin-bottom: 3px;
+    }
+
+    .about-footer-logo img {
+        width: 76px;
     }
 
     .about-footer-brand-name {
-        font-size: 13px;
+        font-size: 10px;
+        letter-spacing: 0.18em;
     }
 
     .about-footer-brand-tagline {
