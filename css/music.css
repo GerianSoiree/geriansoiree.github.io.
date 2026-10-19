@@ -480,3 +480,109 @@
 @media (prefers-reduced-motion: reduce) {
   .music-page * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+
+/* Site-wide navigation, matched to About and Contact. */
+.music-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.music-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 10px 15px;
+  border: 1px solid #b98b36;
+  border-radius: 4px;
+  background: rgba(16, 16, 15, .88);
+  color: #dcae3d;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .035em;
+  line-height: 1.15;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color .18s ease, border-color .18s ease;
+}
+.music-nav .nav-link:hover,
+.music-nav .nav-link:focus-visible {
+  background: rgba(16, 16, 15, .88);
+  color: #fff;
+  border-color: #dcae3d;
+  outline: none;
+}
+.music-nav .nav-link-current {
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .music-hero {
+    padding-top: 20px;
+  }
+  .hero-top {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    min-height: 148px;
+    padding-top: 78px;
+  }
+  .music-nav {
+    top: -10px;
+    left: -12px;
+    right: -12px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+  .music-nav .nav-link {
+    min-height: 30px;
+    padding: 7px 8px;
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  .brand-lockup {
+    justify-content: center;
+    gap: 0;
+  }
+  .brand-logo-image {
+    width: 68px;
+    height: 68px;
+  }
+  .hero-title {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .music-nav {
+    left: -12px;
+    right: -12px;
+    gap: 4px;
+  }
+  .music-nav .nav-link {
+    min-height: 28px;
+    padding: 6px 7px;
+    font-size: 8px;
+  }
+  .hero-top {
+    min-height: 142px;
+    padding-top: 76px;
+  }
+  .brand-logo-image {
+    width: 64px;
+    height: 64px;
+  }
+}
