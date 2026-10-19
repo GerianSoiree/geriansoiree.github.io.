@@ -40,4 +40,17 @@ body.contact-page{background:var(--cream);color:var(--ink);font-family:'Lora',Ge
 .contact-page-nav a{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border:1px solid #b98b36;border-radius:4px;background:rgba(16,16,15,.88);color:#dcae3d;font-family:'Lora',Georgia,serif;font-size:13px;font-weight:500;letter-spacing:.035em;text-decoration:none;text-transform:uppercase;white-space:nowrap;transition:color .18s ease,border-color .18s ease}
 .contact-page-nav a:hover,.contact-page-nav a:focus-visible{background:rgba(16,16,15,.88);color:#fff;border-color:#dcae3d;outline:none}
 .contact-page-nav a.active{color:#fff}
-@media(max-width:760px){.contact-page-nav{top:12px;left:12px;right:12px;gap:6px}.contact-page-nav a{padding:8px 9px;font-size:10px}}
+@media(max-width:760px){
+.contact-page-nav{position:absolute;top:12px;left:10px;right:10px;width:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:5px}
+.contact-page-nav a{padding:7px 8px;font-size:9px;letter-spacing:0;min-height:30px}
+.contact-brand{top:105px;left:0;width:100%;align-items:center;gap:6px}
+.contact-brand-logo{width:68px;height:68px}
+.contact-brand-name{font-size:9px;letter-spacing:1px;text-align:center}
+}
+@media(max-width:560px){
+.contact-page-nav{top:10px;left:8px;right:8px;gap:4px}
+.contact-page-nav a{padding:6px 7px;font-size:8px;min-height:28px}
+.contact-brand{top:100px}
+.contact-brand-logo{width:64px;height:64px}
+.contact-brand-name{font-size:9px;letter-spacing:1px}
+}
