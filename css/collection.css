@@ -648,14 +648,42 @@ body {
     }
 
     .collection-navigation {
-        top: 16px;
-        right: 2%;
+        top: 12px;
+        left: 8px;
+        right: 8px;
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
     }
 
     .collection-navigation a {
-        padding: 0 6px;
-        font-size: 9px;
-        letter-spacing: 0.5px;
+        min-height: 28px;
+        padding: 6px 7px;
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+
+    .collection-logo-link {
+        top: 88px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .collection-logo {
+        width: 76px;
+        height: 76px;
+    }
+
+    .collection-artist-name {
+        top: 166px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 2px;
     }
 
     .collection-navigation a + a::before {
