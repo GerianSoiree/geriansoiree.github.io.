@@ -1128,6 +1128,10 @@ body.about-page {
         height: 76px;
     }
 
+    .about-hero-brand-logo {
+        transform: none;
+    } 
+   
     .about-hero-brand-name {
         font-size: 10px;
         letter-spacing: 1.8px;
