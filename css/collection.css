@@ -692,8 +692,13 @@ body {
 
     .collection-hero-content {
         left: 6%;
-        bottom: 8%;
+        bottom: 7%;
         width: 88%;
+    }
+
+    .collection-hero-content h1 {
+        font-size: 30px;
+        line-height: 1.08;
     }
 
     .collection-eyebrow {
