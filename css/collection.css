@@ -667,18 +667,18 @@ body {
     }
 
     .collection-logo-link {
-        top: 88px;
+        top: 72px;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .collection-logo {
-        width: 76px;
-        height: 76px;
+        width: 64px;
+        height: 64px;
     }
 
     .collection-artist-name {
-        top: 166px;
+        top: 137px;
         left: 0;
         width: 100%;
         text-align: center;
@@ -696,18 +696,14 @@ body {
         width: 88%;
     }
 
-    .collection-hero-content h1 {
-        font-size: 30px;
-        line-height: 1.08;
-    }
-
     .collection-eyebrow {
         font-size: 11px;
         letter-spacing: 2px;
     }
 
     .collection-hero-content h1 {
-        font-size: 34px;
+        font-size: 30px;
+        line-height: 1.08;
     }
 
     .collection-subheading {
