@@ -1072,6 +1072,7 @@ body.about-page {
     width: 112px;
     height: 112px;
     object-fit: contain;
+    transform: translateX(18px);
 }
 
 .about-hero-brand-name {
