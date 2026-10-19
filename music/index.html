@@ -320,14 +320,22 @@
       });
 
       renderTrackList();
+      if (!track.audio) {
+        if (shouldPlay) status.textContent = "The story has changed to " + track.title + ". Playback could not start. Check the Bunny.net audio URL and try again.";
+        return;
+      }
+
+      const selectedAudioUrl = new URL(track.audio, window.location.href).href;
+      // When paused, keep the central player pointed at the selected track.
+      // If another track is already playing, let it continue while the story is browsed.
+      if (shouldPlay || audio.paused) {
+        if (audio.src !== selectedAudioUrl) {
+          audio.src = selectedAudioUrl;
+          audio.load();
+        }
+      }
+
       if (shouldPlay) {
-        if (!track.audio) {
-          status.textContent = "The story has changed to " + track.title + ". Playback could not start. Check the Bunny.net audio URL and try again.";
-          return;
-        }
-        if (audio.src !== new URL(track.audio, window.location.href).href) {
-          audio.src = track.audio;
-        }
         audio.play().then(() => {
           playToggle.classList.add("is-playing");
           playToggle.setAttribute("aria-label", "Pause selected composition");
@@ -345,6 +353,12 @@
       if (!track.audio) {
         status.textContent = "The audio URL is missing for " + track.title + ".";
         return;
+      }
+      const selectedAudioUrl = new URL(track.audio, window.location.href).href;
+      if (audio.src !== selectedAudioUrl) {
+        audio.pause();
+        audio.src = selectedAudioUrl;
+        audio.load();
       }
       if (audio.paused) {
         audio.play().then(() => {
