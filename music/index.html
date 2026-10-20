@@ -405,8 +405,11 @@
     audio.addEventListener("play", () => { playSymbol.textContent = "Ⅱ"; playToggle.classList.add("is-playing"); playToggle.setAttribute("aria-label", "Pause selected composition"); });
     audio.addEventListener("pause", () => { playSymbol.textContent = "▶"; playToggle.classList.remove("is-playing"); playToggle.setAttribute("aria-label", "Play selected composition"); });
     audio.addEventListener("loadedmetadata", () => {
-      if (Number.isFinite(audio.duration) && audio.duration > 0) {
-        updateTrackDuration(selectedIndex, audio.duration);
+      const loadedIndex = tracks.findIndex(track =>
+        track.audio && new URL(track.audio, window.location.href).href === audio.src
+      );
+      if (loadedIndex >= 0 && Number.isFinite(audio.duration) && audio.duration > 0) {
+        updateTrackDuration(loadedIndex, audio.duration);
       }
     });
     audio.addEventListener("timeupdate", () => {
