@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#17130f">
   <meta name="description" content="Listen to Reflections, the debut album by Gerian Soirée, and read the stories behind the music.">
   <title>Reflections | Music | Gerian Soirée</title>
-  <link rel="stylesheet" href="../css/music.css?v=4">
+  <link rel="stylesheet" href="../css/music.css?v=5">
 </head>
 <body class="music-page">
   <main class="music-shell">
@@ -237,6 +237,36 @@
       return mins + ":" + secs;
     }
 
+    function updateTrackDuration(index, seconds) {
+      if (!Number.isFinite(seconds) || seconds <= 0) return;
+      tracks[index].duration = formatTime(seconds);
+      const row = trackList.querySelector('.track-row[data-index="' + index + '"]');
+      const label = row && row.querySelector(".track-duration");
+      if (label) label.textContent = tracks[index].duration;
+      if (selectedIndex === index) {
+        document.getElementById("track-duration").textContent = tracks[index].duration;
+      }
+    }
+
+    // Read each MP3's real duration from its metadata, rather than relying on
+    // manually entered estimates. This does not start playback or interrupt audio.
+    function loadTrackDurations() {
+      tracks.forEach((track, index) => {
+        if (!track.audio) return;
+        const metadataAudio = new Audio();
+        metadataAudio.preload = "metadata";
+        metadataAudio.addEventListener("loadedmetadata", () => {
+          updateTrackDuration(index, metadataAudio.duration);
+          metadataAudio.src = "";
+        }, { once: true });
+        metadataAudio.addEventListener("error", () => {
+          metadataAudio.src = "";
+        }, { once: true });
+        metadataAudio.src = track.audio;
+        metadataAudio.load();
+      });
+    }
+
     function renderTrackList() {
       trackList.innerHTML = "";
       tracks.forEach((track, index) => {
@@ -374,6 +404,11 @@
     document.getElementById("next-track").addEventListener("click", () => selectTrack(selectedIndex + 1, true));
     audio.addEventListener("play", () => { playSymbol.textContent = "Ⅱ"; playToggle.classList.add("is-playing"); playToggle.setAttribute("aria-label", "Pause selected composition"); });
     audio.addEventListener("pause", () => { playSymbol.textContent = "▶"; playToggle.classList.remove("is-playing"); playToggle.setAttribute("aria-label", "Play selected composition"); });
+    audio.addEventListener("loadedmetadata", () => {
+      if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        updateTrackDuration(selectedIndex, audio.duration);
+      }
+    });
     audio.addEventListener("timeupdate", () => {
       document.getElementById("current-time").textContent = formatTime(audio.currentTime);
       seekBar.value = audio.duration ? String((audio.currentTime / audio.duration) * 100) : "0";
@@ -390,6 +425,7 @@
 
     renderTrackList();
     selectTrack(0, false);
+    loadTrackDurations();
   </script>
 </body>
 </html>
