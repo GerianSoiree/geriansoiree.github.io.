@@ -58,3 +58,52 @@
   .gerian-soiree-name { top: 182px !important; }
   .hero-quote { font-size: 16px !important; }
 }
+
+
+/* Compact previous / next test navigation, Reflection 1 only. */
+.reflection-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 18px;
+}
+.reflection-pager a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 5px 11px;
+  border: 1px solid #b88a4a;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  color: #6e5127;
+  font-family: Lora, Georgia, serif;
+  font-size: 10px;
+  letter-spacing: .7px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.reflection-pager a:hover,
+.reflection-pager a:focus-visible {
+  background: #6e5127;
+  color: #ffffff;
+  outline: none;
+}
+.reflection-pager a span {
+  font-size: 14px;
+  line-height: 1;
+}
+@media (max-width: 760px) {
+  .reflection-pager {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  .reflection-pager a {
+    min-height: 28px;
+    padding: 5px 9px;
+    font-size: 9px;
+  }
+}
